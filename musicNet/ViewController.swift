@@ -29,9 +29,14 @@ class ViewController: UIViewController {
         
         musicFetcher.fetchMusicTrack()
             .subscribe(onSuccess: { musicTrack in
-                self.titleTxt.text = musicTrack.title
-                self.descriptionTxt.text = musicTrack.description
+               
+                self.update(musicTrack: musicTrack)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func update(musicTrack: MusicTrack){
+        titleTxt.text = musicTrack.title
+        descriptionTxt.text = musicTrack.description
     }
 }
