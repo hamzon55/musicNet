@@ -11,8 +11,10 @@ import RxSwift
 class ViewController: UIViewController {
     
     let musicFetcher: MusicFetcher
-    @IBOutlet weak var titleTxt: UILabel!
     let disposeBag = DisposeBag()
+    @IBOutlet weak var titleTxt: UILabel!
+    @IBOutlet weak var descriptionTxt: UILabel!
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.musicFetcher = FakeMusicFetcher() 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -28,6 +30,7 @@ class ViewController: UIViewController {
         musicFetcher.fetchMusicTrack()
             .subscribe(onSuccess: { musicTrack in
                 self.titleTxt.text = musicTrack.title
+                self.descriptionTxt.text = musicTrack.description
             })
             .disposed(by: disposeBag)
     }
