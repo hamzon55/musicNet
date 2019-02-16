@@ -7,20 +7,28 @@
 //
 
 import UIKit
-
+import RxSwift
 class ViewController: UIViewController {
     
+    let musicFetcher: MusicFetcher
     @IBOutlet weak var titleTxt: UILabel!
+    let disposeBag = DisposeBag()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.musicFetcher = FakeMusicFetcher() 
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.musicFetcher = FakeMusicFetcher()
+        super.init(coder: aDecoder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        guard let musicData =  musicModel(title: "test", description: "test2") else {
-//            fatalError("Unable to instantiate music")
-
-        }
         
+        musicFetcher.fetchMusicTrack()
+            .subscribe(onSuccess: { musicTrack in
+                self.titleTxt.text = musicTrack.title
+            })
+            .disposed(by: disposeBag)
     }
-
-
-
-
+}

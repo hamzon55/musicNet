@@ -7,8 +7,15 @@
 //
 
 import Foundation
-
+import RxSwift
 
 protocol MusicFetcher{
-    func fetchMusicTrack()
+    func fetchMusicTrack() -> Single<MusicTrack>
+}
+
+class FakeMusicFetcher: MusicFetcher {
+    func fetchMusicTrack() -> Single<MusicTrack> {
+        let musicTrack = MusicTrack(title: "Michael Jackson",description: "Earth Song")
+        return Single.just(musicTrack)
+    }
 }
