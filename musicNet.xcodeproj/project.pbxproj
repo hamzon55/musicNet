@@ -14,7 +14,7 @@
 		204F97342218192100948BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204F97322218192100948BBE /* LaunchScreen.storyboard */; };
 		204F973F2218192200948BBE /* musicNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F973E2218192200948BBE /* musicNetTests.swift */; };
 		204F974A2218192200948BBE /* musicNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F97492218192200948BBE /* musicNetUITests.swift */; };
-		204F975922181AB700948BBE /* musicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F975822181AB700948BBE /* musicModel.swift */; };
+		204F975922181AB700948BBE /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F975822181AB700948BBE /* MusicTrack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		204F97452218192200948BBE /* musicNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musicNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		204F97492218192200948BBE /* musicNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicNetUITests.swift; sourceTree = "<group>"; };
 		204F974B2218192200948BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		204F975822181AB700948BBE /* musicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicModel.swift; sourceTree = "<group>"; };
+		204F975822181AB700948BBE /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 		204F975722181A0200948BBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				204F975822181AB700948BBE /* musicModel.swift */,
+				204F975822181AB700948BBE /* MusicTrack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204F975922181AB700948BBE /* musicModel.swift in Sources */,
+				204F975922181AB700948BBE /* MusicTrack.swift in Sources */,
 				204F972C2218192000948BBE /* ViewController.swift in Sources */,
 				204F972A2218192000948BBE /* AppDelegate.swift in Sources */,
 			);
