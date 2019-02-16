@@ -8,13 +8,18 @@
 
 import UIKit
 import RxSwift
-class ViewController: UIViewController {
+
+protocol MusicTrackDisplayer {
+    func update(musicTrack: MusicTrack)
+}
+
+class ViewController: UIViewController, MusicTrackDisplayer {
     
     let musicFetcher: MusicFetcher
     let disposeBag = DisposeBag()
     @IBOutlet weak var titleTxt: UILabel!
     @IBOutlet weak var descriptionTxt: UILabel!
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.musicFetcher = FakeMusicFetcher() 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,8 +36,8 @@ class ViewController: UIViewController {
             .subscribe(onSuccess: update)
             .disposed(by: disposeBag)
     }
-
-    private func update(musicTrack: MusicTrack){
+    
+     func update(musicTrack: MusicTrack){
         titleTxt.text = musicTrack.title
         descriptionTxt.text = musicTrack.description
     }
