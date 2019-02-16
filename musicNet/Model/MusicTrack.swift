@@ -15,3 +15,7 @@ struct MusicTrack {
     let description:  String
     
 }
+struct PlayList {
+    
+    let tracks: [MusicTrack]
+}
