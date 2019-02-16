@@ -28,10 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         musicFetcher.fetchMusicTrack()
-            .subscribe(onSuccess: { musicTrack in
-               
-                self.update(musicTrack: musicTrack)
-            })
+            .subscribe(onSuccess: update)
             .disposed(by: disposeBag)
     }
 
